@@ -15,11 +15,15 @@ import { DataService } from './services/data-service.service';
 
 // Routes
 import { appRoutes } from './routes';
+import { ListComponent } from './list/list.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    ListComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
