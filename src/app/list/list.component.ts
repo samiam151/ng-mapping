@@ -34,9 +34,11 @@ export class ListComponent {
 
   searchDescription(e) {
     let term = e.target.value
-    this.businessesPlay = this.businesses.filter((business: Business) => {
-      return business.description.includes(term)
-    })
+    if (term.length > 1){
+      this.businessesPlay = this.businesses.filter((business: Business) => {
+        return business.description.includes(term)
+      })
+    }
   }
 
 }
