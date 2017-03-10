@@ -1,5 +1,14 @@
+<!--Types-->
+<div class="options">
+  <button *ngFor="let type of types" (click)="filterForType(type)">{{type}}</button>
+</div>
+
+<!--Search-->
+<input type="text" (keypress)="searchDescription($event)">
+
+<!--List-->
 <ul>
-  <li *ngFor="let business of businesses">
-    {{business.name}}
+  <li *ngFor="let business of businessesPlay">
+    <a href="http://{{business.website}}" target="_blank">{{business.name}}</a>
   </li>
 </ul>

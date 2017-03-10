@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-service.service';
+import { FilterService } from '../services/filter.service';
+
 import { Business } from '../models/business';
 
 @Component({
@@ -10,15 +12,18 @@ import { Business } from '../models/business';
 export class MapComponent implements OnInit {
   markers: Object[]
 
-  constructor(private Data: DataService){ 
-    Data.getBusinesses().subscribe((data: Business[]) => {
-      console.log(data)
-      this.markers = data;
-    })
+  constructor(
+    private Data: DataService,
+    private Filter: FilterService){ 
+      
+      Data.getBusinesses().subscribe((data: Business[]) => {
+        this.markers = data;
+      })
     
   }
 
   ngOnInit() {
+    
   }
 
   mapConfig: Object = {

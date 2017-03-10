@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-service.service';
+import { FilterService } from '../services/filter.service';
+
 import { Business } from '../models/business';
 
 @Component({
@@ -7,16 +9,34 @@ import { Business } from '../models/business';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
   businesses: Object[]
+  businessesPlay: Object[]
+  types: string[]
 
-  constructor(private Data: DataService) {
-      Data.getBusinesses().subscribe((data: Business[]) => {
-        this.businesses = data
-      })
+  constructor(
+    private Data: DataService,
+    private Filter: FilterService) {
+        Data.getBusinesses().subscribe((data: Business[]) => {
+          this.businesses = data
+          this.businessesPlay = data
+          this.types = this.Filter.getUniqueTypes(data)
+
+          console.log(this.businesses[0])
+        })
   }
 
-  ngOnInit() {
+  filterForType(type: string){
+    this.businessesPlay = this.businesses.filter((business: Business) => {
+      return business.types.includes(type)
+    })
+  }
+
+  searchDescription(e) {
+    let term = e.target.value
+    this.businessesPlay = this.businesses.filter((business: Business) => {
+      return business.description.includes(term)
+    })
   }
 
 }
