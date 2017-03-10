@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-service.service';
-import { SebmGoogleMap } from 'angular2-google-maps/core';
+
 
 @Component({
   selector: 'app-map',
@@ -8,10 +8,12 @@ import { SebmGoogleMap } from 'angular2-google-maps/core';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  markers: Object[]
 
   constructor(private Data: DataService){ 
     Data.getBusinesses().subscribe(data => {
       console.log(data)
+      this.markers = data;
     })
   }
 
@@ -19,7 +21,7 @@ export class MapComponent implements OnInit {
     
   }
 
-  lat: number = 38.9
-  lng: number = -77.015420
+  lat: number = 38.91575
+  lng: number = -77.015220
   zoom: number = 11
 }

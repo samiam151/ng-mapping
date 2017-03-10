@@ -12,6 +12,7 @@ import { MapComponent } from './map/map.component';
 
 // Services
 import { DataService } from './services/data-service.service';
+import { FilterService } from './services/filter.service';
 
 // Routes
 import { appRoutes } from './routes';
@@ -35,7 +36,8 @@ import { NavComponent } from './nav/nav.component';
     })
   ],
   providers: [
-    DataService
+    DataService,
+    FilterService
   ],
   bootstrap: [AppComponent]
 })
