@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs/Rx';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
+import { Business } from '../models/business';
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -19,6 +21,7 @@ export class DataService {
 
   private parseData(res: Response) {
     let body = res.json()
+    body = body.map(business => new Business(business))
     return body || {}
   }
 }
