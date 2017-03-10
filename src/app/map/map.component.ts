@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-service.service';
+import { SebmGoogleMap } from 'angular2-google-maps/core';
 
 @Component({
   selector: 'app-map',
@@ -15,8 +16,10 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
-  lat: number = 38.917
-  lng: number = -77.016420
+  lat: number = 38.9
+  lng: number = -77.015420
+  zoom: number = 11
 }
