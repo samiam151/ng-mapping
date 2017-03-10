@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data-service.service';
 
 @Component({
   selector: 'app-map',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Data: DataService){ 
+    Data.getBusinesses().subscribe(data => {
+      console.log(data)
+    })
+  }
 
-  
   ngOnInit() {
   }
 
