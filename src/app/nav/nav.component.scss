@@ -1,0 +1,18 @@
+header {
+    background-color: limegreen;
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    nav {
+        ul {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+
+            li {
+                margin-right: 15px;
+            }
+        }
+    }
+}
