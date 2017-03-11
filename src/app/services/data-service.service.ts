@@ -19,9 +19,22 @@ export class DataService {
       return this.http.get(this.url, options).map(data => this.parseData(data))
   }
 
+  getBusiness(name: string): Observable<any> {
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http.get(this.url, options).map(data => this.filterForBusiness(data, name))
+  }
+
   private parseData(res: Response) {
     let body = res.json()
     body = body.map(business => new Business(business))
     return body || {}
+  }
+
+  private filterForBusiness(res: Response, name: string){
+    let body = res.json();
+    return body.variants.filter((datum: Business) => {
+        return datum.name === name;
+    }) || {};
   }
 }

@@ -25,7 +25,7 @@ export class Business {
         this.contact = info.ContactName
         this.email = info.BusinessEMail;
         this.phone = info.BusinessPhone;
-        this.website = info.BusinessWebsite;
+        this.website = info.BusinessWebsite.replace(/http:\/\//g, "")
         this.description = info.Description;
         this.dateEstablished = info.DateEstablished;
         this.ward = info.Ward;

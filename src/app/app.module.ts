@@ -18,13 +18,15 @@ import { FilterService } from './services/filter.service';
 import { appRoutes } from './routes';
 import { ListComponent } from './list/list.component';
 import { NavComponent } from './nav/nav.component';
+import { BusinessDetailComponent } from './business-detail/business-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     ListComponent,
-    NavComponent
+    NavComponent,
+    BusinessDetailComponent
   ],
   imports: [
     BrowserModule,

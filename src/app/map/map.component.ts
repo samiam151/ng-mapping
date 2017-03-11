@@ -7,19 +7,17 @@ import { Business } from '../models/business';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
   markers: Object[]
 
   constructor(
     private Data: DataService,
-    private Filter: FilterService){ 
-      
+    private Filter: FilterService){     
       Data.getBusinesses().subscribe((data: Business[]) => {
         this.markers = data;
-      })
-    
+      })  
   }
 
   ngOnInit() {
