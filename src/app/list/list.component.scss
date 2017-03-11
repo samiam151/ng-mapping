@@ -1,3 +1,12 @@
+.cont {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.businesses {
+    flex: 70%;
+}
+
 .searchBusiness {
     margin: 10px 0;
     padding: 5px 7px;
@@ -7,22 +16,24 @@
 }
 
 .filterTypes {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    // display: flex;
+    // flex-flow: row wrap;
+    // justify-content: space-around;
 
     .type {
-        background-color: #ccc;
+        // background-color: #ccc;
         padding: 5px 7px;
         border-radius: 3px;
+        border-left: 3px solid transparent;
 
         &:hover {
             cursor: pointer;
-            background-color: #bbb;
+            border-left: 3px solid #bbb;
         }
 
         &.selected {
-            background-color: limegreen;
+            border-left: 3px solid dodgerblue;
         }
     }
 }
+

@@ -1,19 +1,26 @@
 <!--Types-->
 <div class="container">
-  <!--<div class="options">
-    <ul class="filterTypes">
-      <li class="type" *ngFor="let type of types" (click)="filterForType(type, $event)">{{type}}</li>
-    </ul>
-  </div>-->
 
   <!--Search-->
-  <input class="searchBusiness" type="text" (keyup)="searchDescription($event)">
+  <input class="searchBusiness" type="text" (keyup)="searchDescription($event)" placeholder="Search keywords...">
 
-  <!--List-->
-  <ul>
-    <li *ngFor="let business of businessesPlay">
-      <a href="http://{{business.website}}" target="_blank">{{business.name}}</a>
-      <!--<a [routerLink]="['/business/' + business.name]">Detail</a>-->
-    </li>
-  </ul>
+  <div class="cont">
+
+    <!--List-->
+    <div class="businesses">
+      <ul>
+        <li *ngFor="let business of businessesPlay">
+          <a href="http://{{business.website}}" target="_blank">{{business.name}}</a>
+          <!--<a [routerLink]="['/business/' + business.name]">Detail</a>-->
+        </li>
+      </ul>
+    </div>
+    
+    <div class="options">
+      <ul class="filterTypes">
+        <li class="type" *ngFor="let type of types" (click)="filterForType(type, $event)">{{type}}</li>
+      </ul>
+    </div>
+  
+  </div>
 </div>

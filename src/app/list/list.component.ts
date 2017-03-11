@@ -24,7 +24,7 @@ export class ListComponent {
 
                 console.log(this.businesses[0])
         })
-}
+    }
 
     public filterForType(type: string, e :Event){
         this.toggleSelected(e)
