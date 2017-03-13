@@ -11,23 +11,21 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FilterService {
 
-  constructor(private Data: DataService) { }
+	constructor(private Data: DataService) { }
 
-  getUniqueTypes(data: Business[]): string[] {
-    let types: any[] = []
-    
-    data.forEach((business: Business) => {
-            
-      if (business.types){
-        business.types.forEach((type) => {
-          if (!types.includes(type)){
-            types.push(type)
-          }        
-        })
-      }
+	public getUniqueTypes(data: Business[]): string[] {
+		let types: any[] = []
 
-    })
+		data.forEach((business: Business) => {
+			if (business.types){
+				business.types.forEach((type) => {
+					if (!types.includes(type)){
+						types.push(type)
+					}        
+				})
+			}
+		})
 
-    return types
-  }
+		return types
+	}
 }

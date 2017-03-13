@@ -10,9 +10,10 @@ import { Business } from '../models/business';
     styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-    businesses: Object[]
-    businessesPlay: Object[]
-    types: string[]
+    public businesses: Object[]
+    public businessesPlay: Object[]
+    public types: string[]
+    public configs: Object[] = []
 
     constructor(
         private Data: DataService,
@@ -21,8 +22,6 @@ export class ListComponent {
                 this.businesses = data
                 this.businessesPlay = data
                 this.types = this.Filter.getUniqueTypes(data)
-
-                console.log(this.businesses[0])
         })
     }
 
@@ -50,6 +49,10 @@ export class ListComponent {
             document.querySelector('.selected').classList.remove('selected')
         }
         e.target['classList'].add('selected')
+    }
+
+    private setConfigs(){
+
     }
 
 }
