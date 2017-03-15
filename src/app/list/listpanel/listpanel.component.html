@@ -1,0 +1,23 @@
+<div class="business-detail">
+  <p class="business-detail-name" (click)="showInfo(business)">{{business.name}}</p>
+
+  <div *ngIf="showInfoBool" class="business-detail-drop">
+    
+    <div class="business-detail-drop-info">
+      <h3>{{business.name}}</h3>
+      <p>{{business.phone}}</p>
+      <p>{{business.contact}}</p>
+      <p>{{business.email}}</p>
+      <a *ngIf="business.website" target="_blank" href="http://{{business.website}}">{{business.website}}</a>
+      <p><small>{{business.coords.Address}}</small></p>
+    </div>
+
+    <div class="business-detail-drop-map">
+      <sebm-google-map [mapDraggable]="false" [latitude]="business.coords.Latitude" [longitude]="business.coords.Longitude" [zoom]="14">
+        <sebm-google-map-marker [latitude]="business.coords.Latitude" [longitude]="business.coords.Longitude">
+        </sebm-google-map-marker>
+      </sebm-google-map>
+    </div>
+
+  </div>
+</div>

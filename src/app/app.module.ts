@@ -19,6 +19,7 @@ import { appRoutes } from './routes';
 import { ListComponent } from './list/list.component';
 import { NavComponent } from './nav/nav.component';
 import { BusinessDetailComponent } from './business-detail/business-detail.component';
+import { ListpanelComponent } from './list/listpanel/listpanel.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BusinessDetailComponent } from './business-detail/business-detail.compo
     MapComponent,
     ListComponent,
     NavComponent,
-    BusinessDetailComponent
+    BusinessDetailComponent,
+    ListpanelComponent
   ],
   imports: [
     BrowserModule,

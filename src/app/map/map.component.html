@@ -1,15 +1,13 @@
-<sebm-google-map [latitude]="mapConfig.lat" [longitude]="mapConfig.lng" [zoom]="mapConfig.zoom">
-  <sebm-google-map-marker *ngFor="let marker of markers" [latitude]="marker.coords.Latitude" [longitude]="marker.coords.Longitude" (markerClick)="test(marker)">
+<sebm-google-map [mapDraggable]="false" [latitude]="mapConfig.lat" [longitude]="mapConfig.lng" [zoom]="mapConfig.zoom">
+  <sebm-google-map-marker *ngFor="let marker of markers" [latitude]="marker.coords.Latitude" [longitude]="marker.coords.Longitude" (markerClick)="test(marker, $event)">
     <sebm-google-map-info-window [disableAutoPan]="true">
       <div class="infowindow">
           <h3>{{marker.name}}</h3>           
           <p>{{marker.phone}}</p>
           <p>{{marker.contact}}</p>
           <p>{{marker.email}}</p>
-          <a target="_blank" href="http://{{marker.website}}">{{marker.website}}</a>
-          <p>
-              <small>{{marker.address.firstLine}}, </small>
-          </p>
+          <a *ngIf="marker.website" target="_blank" href="http://{{marker.website}}">{{marker.website}}</a>
+          <p><small>{{marker.coords.Address}}</small></p>
       </div>   
     </sebm-google-map-info-window>
   </sebm-google-map-marker>

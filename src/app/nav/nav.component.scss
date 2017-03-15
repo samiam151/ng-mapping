@@ -1,5 +1,5 @@
 header {
-    background-color: dodgerblue;
+    // background-color: dodgerblue;
     height: 60px;
     display: flex;
     align-items: center;
@@ -11,7 +11,12 @@ header {
             align-items: center;
 
             li {
-                margin-right: 15px;
+                margin-right: 18px;
+
+                a {
+                    font-size: 1.3em;
+                    
+                }
             }
         }
     }

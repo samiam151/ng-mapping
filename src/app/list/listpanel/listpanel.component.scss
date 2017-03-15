@@ -1,0 +1,19 @@
+.business-detail-drop {
+    padding: 15px 50px;
+    background-color: #eee;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.business-detail-name {
+    &:hover {
+        color: dodgerblue;
+        cursor: pointer;
+    }
+}
+
+.sebm-google-map-container {
+  height: 200px;
+  width: 300px;
+}

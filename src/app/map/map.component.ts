@@ -7,7 +7,6 @@ import { Business } from '../models/business';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  // directives: [SebmGoogleMap, SebmGoogleMapMarker, SebmGoogleMapInfoWindow],
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
@@ -29,8 +28,8 @@ export class MapComponent implements OnInit {
     zoom: 11
   }
 
-  public test(arg): void {
-    console.log(SebmGoogleMapInfoWindow)
+  public test(marker, event): void {
+    console.log(marker)
   }
   
 }

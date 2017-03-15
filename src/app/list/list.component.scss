@@ -7,8 +7,8 @@
     flex: 70%;
 }
 
-.searchBusiness {
-    margin: 10px 0;
+input.searchBusiness {
+    margin: 10px 0 30px;
     padding: 5px 7px;
     width: 100%;
     border-radius: 2px;
@@ -22,13 +22,14 @@
 
     .type {
         // background-color: #ccc;
-        padding: 5px 7px;
-        border-radius: 3px;
+        padding: 5px 0px 5px 20px;
+        // border-radius: 3px 3px 3px 0;
         border-left: 3px solid transparent;
+        transition: border-color 0.075s ease-in;
 
         &:hover {
             cursor: pointer;
-            border-left: 3px solid #bbb;
+            border-left: 3px solid #ccc;
         }
 
         &.selected {

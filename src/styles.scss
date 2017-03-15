@@ -13,3 +13,17 @@ li {
     width: 85%;
     margin: 0 auto;
 }
+
+a {
+    text-decoration: none;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    color: white;
+}
