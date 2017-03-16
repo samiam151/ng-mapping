@@ -31,10 +31,8 @@ export class DataService {
     return body || {}
   }
 
-  private filterForBusiness(res: Response, name: string){
+  private filterForBusiness(res: Response, id: string){
     let body = res.json();
-    return body.variants.filter((datum: Business) => {
-        return datum.name === name;
-    }) || {};
+    return body[id] || {};
   }
 }

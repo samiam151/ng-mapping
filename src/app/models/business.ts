@@ -12,6 +12,7 @@ export class Business {
     public points: string
     public types: string[]
     public coords: Object
+    public id: any
 
     static instances = 0
 
@@ -19,6 +20,7 @@ export class Business {
         let info = business['info'];
         Business.instances++
         
+        this.id = business['id'];
         this.name = info.CompanyName;
         this.address = info.BusinessAddress1;
         this.owner = info.PrincipalOwner;
@@ -33,7 +35,7 @@ export class Business {
 
         this.address = business['address'];
         this.types = business['types'];
-        this.coords = business['Coordinates'];
+        this.coords = business['coords'];
     }
 
     public toString() {

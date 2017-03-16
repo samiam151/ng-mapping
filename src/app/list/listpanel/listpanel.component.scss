@@ -1,6 +1,7 @@
 .business-detail-drop {
+    position: relative;
     padding: 15px 50px;
-    background-color: #eee;
+    background-color: #fafafa;
 
     display: flex;
     justify-content: space-between;
@@ -16,4 +17,16 @@
 .sebm-google-map-container {
   height: 200px;
   width: 300px;
+}
+
+div.close {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    font-size: 1.2em;
+
+    &:hover {
+        color: dodgerblue;
+        cursor: pointer;
+    }
 }

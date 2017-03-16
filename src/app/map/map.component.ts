@@ -17,10 +17,11 @@ export class MapComponent implements OnInit {
     private Filter: FilterService){     
       Data.getBusinesses().subscribe((data: Business[]) => {
         this.markers = data;
-      })  
+      })    
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+   }
 
   private mapConfig: Object = {
     lat: 38.91575,

@@ -18,6 +18,11 @@ a {
     text-decoration: none;
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 .loading {
     position: fixed;
     top: 0;
@@ -26,4 +31,9 @@ a {
     bottom: 0;
     background-color: black;
     color: white;
+}
+
+
+.fade-in {
+    animation: fadein 0.3s;
 }

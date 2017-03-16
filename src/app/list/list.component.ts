@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data-service.service';
 import { FilterService } from '../services/filter.service';
 import { ListpanelComponent } from './listpanel/listpanel.component';
-
+import { TruncatePipe } from '../pipes/truncate';
 import { Business } from '../models/business';
 
 @Component({
-    selector: 'app-list',
     templateUrl: './list.component.html',
-    // directives: [ListpanelComponent],
     styleUrls: ['./list.component.scss']
 })
 export class ListComponent {

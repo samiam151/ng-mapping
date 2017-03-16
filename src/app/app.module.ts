@@ -13,6 +13,10 @@ import { MapComponent } from './map/map.component';
 // Services
 import { DataService } from './services/data-service.service';
 import { FilterService } from './services/filter.service';
+import { BusinessDetailActivator } from './business-detail/business-detail-activator.service';
+
+// Pipes
+import { TruncatePipe } from './pipes/truncate';
 
 // Routes
 import { appRoutes } from './routes';
@@ -41,7 +45,8 @@ import { ListpanelComponent } from './list/listpanel/listpanel.component';
   ],
   providers: [
     DataService,
-    FilterService
+    FilterService,
+    BusinessDetailActivator
   ],
   bootstrap: [AppComponent]
 })

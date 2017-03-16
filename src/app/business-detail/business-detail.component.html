@@ -1,1 +1,11 @@
-{{business}}
+<div class="container" *ngIf="isAvailable">
+    
+    <div class="bd-info">
+        <h1>{{business.name}}</h1>
+        <p>{{business.description}}</p>
+    </div>
+    
+    <p *ngFor="let key of keys">{{key}}: {{ business[key] }}</p>
+
+
+</div>

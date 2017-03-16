@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Business } from '../../models/business';
+import { TruncatePipe } from '../../pipes/truncate';
 
 @Component({
   selector: 'business-detail',
@@ -16,7 +17,7 @@ export class ListpanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  public showInfo(business: Business){
+  public showInfo(){
     this.showInfoBool = !this.showInfoBool
   }
 
