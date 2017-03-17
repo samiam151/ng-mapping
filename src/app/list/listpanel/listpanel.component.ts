@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Business } from '../../models/business';
-import { TruncatePipe } from '../../pipes/truncate';
+
 
 @Component({
   selector: 'business-panel',

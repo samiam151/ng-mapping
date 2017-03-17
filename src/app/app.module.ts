@@ -16,7 +16,7 @@ import { FilterService } from './services/filter.service';
 import { BusinessDetailActivator } from './business-detail/business-detail-activator.service';
 
 // Pipes
-import { TruncatePipe } from './pipes/truncate';
+
 
 // Routes
 import { appRoutes } from './routes';
