@@ -7,10 +7,8 @@
     <!--List-->
     <div class="businesses">
       <ul>
-        <li *ngFor="let business of businessesPlay">
-          <!--<a href="http://{{business.website}}" target="_blank">{{business.name}}</a>-->
-          <!--<a [routerLink]="['/business/' + business.name]">Detail</a>-->
-		      <business-detail [business]='business'></business-detail>
+        <li *ngFor="let business of businessesDisplay">
+		      <business-panel [business]='business'></business-panel>
         </li>
       </ul>
     </div>

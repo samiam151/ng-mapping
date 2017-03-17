@@ -3,7 +3,7 @@ import { Business } from '../../models/business';
 import { TruncatePipe } from '../../pipes/truncate';
 
 @Component({
-  selector: 'business-detail',
+  selector: 'business-panel',
   templateUrl: './listpanel.component.html',
   styleUrls: ['./listpanel.component.scss']
 })

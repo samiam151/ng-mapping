@@ -11,7 +11,7 @@ import { Business } from '../models/business';
 })
 export class ListComponent {
     public businesses: Object[]
-    public businessesPlay: Object[]
+    public businessesDisplay: Object[]
     public types: string[]
     public configs: Object[] = []
 
@@ -20,14 +20,14 @@ export class ListComponent {
         private Filter: FilterService) {
             Data.getBusinesses().subscribe((data: Business[]) => {
                 this.businesses = data
-                this.businessesPlay = data
+                this.businessesDisplay = data
                 this.types = this.Filter.getUniqueTypes(data)
         })
     }
 
     public filterForType(type: string, e :Event){
         this.toggleSelected(e)
-        this.businessesPlay = this.businesses.filter((business: Business) => {
+        this.businessesDisplay = this.businesses.filter((business: Business) => {
             return business.types.includes(type)
         })
     }
@@ -35,11 +35,11 @@ export class ListComponent {
     public searchDescription(e) {
         let term: string = e.target.value
         if (term.length > 1){
-            this.businessesPlay = this.businesses.filter((business: Business) => {
+            this.businessesDisplay = this.businesses.filter((business: Business) => {
                 return business.description.toLowerCase().includes(term.toLowerCase()) || business.name.toLowerCase().includes(term.toLowerCase())
             })
         } else {
-            this.businessesPlay = this.businesses
+            this.businessesDisplay = this.businesses
         }
     }
 
