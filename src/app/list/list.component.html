@@ -2,20 +2,22 @@
 <div class="container">
   <!--Search-->
   <input class="searchBusiness" type="text" (keyup)="searchDescription($event)" placeholder="Search keywords...">
+  <div class="cont">
 
-  <!--List-->
-  <div class="businesses">
-    <ul>
-      <li *ngFor="let business of businessesDisplay">
-        <business-panel [business]='business'></business-panel>
-      </li>
-    </ul>
-  </div>
+    <!--List-->
+    <div class="businesses">
+      <ul>
+        <li *ngFor="let business of businessesDisplay">
+		      <business-panel [business]='business'></business-panel>
+        </li>
+      </ul>
+    </div>
 
-<!--Sibebar Options-->
-  <div class="options">
-    <ul class="filterTypes">
-      <li class="type" *ngFor="let type of types" (click)="filterForType(type, $event)">{{type}}</li>
-    </ul>
+	<!--Sibebar Options-->
+    <div class="options">
+      <ul class="filterTypes">
+        <li class="type" *ngFor="let type of types" (click)="filterForType(type, $event)">{{type}}</li>
+      </ul>
+    </div>
   </div>
 </div>
